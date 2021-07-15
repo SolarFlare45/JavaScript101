@@ -44,7 +44,7 @@ In the past this was solved by putting the script tags at the bottom of the body
 
 ## async
 
-Use when the files have no external dependencies (CDNs etc.).
+Use when the script has no external dependencies (CDNs etc.).
 
 This tells the browser that script fetching is fine while the page loads but to wait until execution is over before resuming the parsing. This is only available for externally loaded files.
 
