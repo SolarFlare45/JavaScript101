@@ -34,7 +34,11 @@ These are totally independent of each other. Java is Object-oriented and strongl
 
 Note that the index file will be executed by default if you try to execute a folder containing JS files. 
 
-## Location of script tags
+# Functions and Script Imports
+
+Note that when scripts are imported in HTML, they are imported in the order they are written. Therefore if you have a function that one script import is using but that script import is after the first one, there will be an error as the function is not found!
+
+# Location of script tags
 
 Script tags can really be placed in the body or the head section. 
 
