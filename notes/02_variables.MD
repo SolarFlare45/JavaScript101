@@ -114,47 +114,15 @@ parseInt(value);
 value.toString();
 </script>
 
-# Functions
 
-Functions are essentially blocks of code. It can have parameters and return values but does need to have them. Every function execution is independent from other function executions. 
+### null/undefined/NaN
 
-If you are using functions imported from another script, make sure to import that script first! This is why GTM containers are usually placed as high in the head as possible. 
+Undefined is the default value for uninitialized variables. DO NOT manually assign undefined as a value. 
 
-This applies for variables in script imports as well. You can reference these variables correctly as long as the script imports are in the right order. 
+Null is never assumed by default and is useful in 'clearing' a variable. 
 
-## Hoisting
+NaN is more like an error code that occurs when operations occur with non number values. (eg: 3*hi).
 
-Functions are hoisted by Javascript so function DEFINITIONS can be declared after they are used/called. 
+### typeof
 
-However function EXPRESSIONS(functions that use let and const) do not have this utility. 
-
-Hoisting also works with variables somewhat. However it should be noted that there is no need to initialize variables. 
-
-## Shadowing
-
-This refers to making a locally scoped variable with the same name as a globally scoped one. It creates a new variable on a different scope - this variables does not overwrite or remove the global variable by the way - both co-exist. 
-
-<script>
-let userName="Max"
-function display(){
-    let userName="Manu";
-    alert("Manu");
-}
-display();
-</script>
-
-This will not generate an error. Note that the function prioritizes the local scope before moving on to the global scope. 
-
-
-## Return
-
-Nothing after the return statement will be returned. There are some instances of "return-less" functions but they are mainly for HTTP requests. 
-
-## Event Listeners
-
-Functions can be added as event listeners. However parantheses should be avoided because that will immediately call the function!
-
-
-
-## Splitting Code
-
+This allows for the type of a variable at runtime to be discovered. Numbers, string, arrays and objects are detected. Note that array is counted as type of object. 
