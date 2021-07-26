@@ -12,7 +12,10 @@ function getUserNumberInput() {
 function writeToLog(operationIdentifier, prevResult, opValue, newResult) {
   //shorthanding the k/v process
   const logEntry = {
-    operationIdentifier, prevResult, opValue, newResult
+    operationIdentifier,
+    prevResult,
+    opValue,
+    newResult,
   };
   logEntries.push(logEntry);
 }
@@ -24,34 +27,41 @@ function createAndWriteLog(operator, initialResult, opValue) {
   console.log(logEntries);
 }
 
-
+//mega-function for calculation
+function calculateResult(calculationType) {
+  const opValue = getUserNumberInput();
+  let operation = "";
+  const initialResult = currentResult;
+  if (calculationType === "ADD") {
+    currentResult += opValue;
+    operation = "+";
+  } else if (calculationType === "SUBTRACT") {
+    currentResult -= opValue;
+    operation = "-";
+  } else if (calculationType === "MULTIPLY") {
+    currentResult *= opValue;
+    operation = "*";
+  } else if (calculationType === "DIVIDE") {
+    currentResult /= opValue;
+    operation = "/";
+  }
+  createAndWriteLog(operation, initialResult, opValue);
+}
 
 function add() {
-  const opValue = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult += opValue; //value is itself added to operand
-  createAndWriteLog("+", initialResult, opValue);
+  calculateResult("ADD");
 }
 
 function subtract() {
-  const opValue = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult -= opValue;
-  createAndWriteLog("-", initialResult, opValue);
+  calculateResult("SUBTRACT");
 }
 
 function multiply() {
-  const opValue = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult *= opValue;
-  createAndWriteLog("*", initialResult, opValue);
+  calculateResult("MULTIPLY");
 }
 
 function divide() {
-  const opValue = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult /= opValue;
-  createAndWriteLog("/", initialResult, opValue);
+  calculateResult("DIVIDE");
 }
 
 //add functions as event listeners
