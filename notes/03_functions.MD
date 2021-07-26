@@ -22,12 +22,12 @@ This refers to making a locally scoped variable with the same name as a globally
 let userName="Max"
 function display(){
     let userName="Manu";
-    alert("Manu");
+    alert(userName);
 }
 display();
 </script>
 
-This will not generate an error. Note that the function prioritizes the local scope before moving on to the global scope. 
+This will not generate an error and will output "Manu". Note that the function prioritizes the local scope before moving on to the global scope. 
 
 
 ## Return

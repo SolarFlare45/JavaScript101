@@ -67,3 +67,11 @@ Simply do
 nodemon [file.js]
 
 And now nodemon will automatically run this file whenever alterations to it are made. Be sure to (npm install -g nodemon) to ensure that you can use nodemon globally.
+
+# DevTools
+
+Using chrome devtools allows for examination using breakpoints to move through function execution line by line. Breakpoints will pause the function call at one point and 
+
+Changing the sources code directly will not alter the existing code and is a surefire way of testing code before making them permanent. Remember to save this to commit it to the page though! Might be an issue if the code doesn't have a known trigger though.
+
+Note that the chrome console functions both as a single line executor AND as a file where you can store variables and such.
