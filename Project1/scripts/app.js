@@ -29,6 +29,19 @@ function createAndWriteLog(operator, initialResult, opValue) {
 
 //mega-function for calculation
 function calculateResult(calculationType) {
+
+  let operationTypes = ["ADD", 'SUBTRACT', "MULTIPLY", 'DIVIDE'];
+
+  let found = false;
+  for (let op of operationTypes) {
+    if (calculationType === op) {
+      found = true;
+    }
+  }
+
+  if(!found)
+
+
   const opValue = getUserNumberInput();
   let operation = "";
   const initialResult = currentResult;
@@ -45,6 +58,8 @@ function calculateResult(calculationType) {
     currentResult /= opValue;
     operation = "/";
   }
+
+
   createAndWriteLog(operation, initialResult, opValue);
 }
 

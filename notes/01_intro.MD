@@ -42,9 +42,14 @@ Note that when scripts are imported in HTML, they are imported in the order they
 
 Script tags can really be placed in the body or the head section. For inline or in page scripts, Async and defer cannot be used practically and if a src is used, the src file will be what is prioritized. 
 
-However, this creates a problem. The browser will wait until all the scripts have been loaded until the next html is parsed. 
+However, this creates a problem. The browser will wait until all the scripts have been loaded until the next html is parsed. So if the script needs to be fetched from CDN or server, the page will literally halt loading until that network request is fulfilled. 
 
 In the past this was solved by putting the script tags at the bottom of the body. However, the problem with this is that a lot of modern sites require dynamic functionality and simply cannot wait until everything is rendered to start loading script. 
+
+Async and defer both tell the browser to keep parsing/loading while we are waiting for the network request to be fulfilled. The difference is what to do with the code once it is retrieved. 
+
+async -> pause parsing and execute code!
+defer -> keep parsing and perform execution at the end!
 
 ## async
 
@@ -59,6 +64,7 @@ This tells the browser that script fetching is fine while the page loads but to 
 Use when external dependencies are present and a fully parsed DOM is necessary for execution of the script. 
 
 This tells the browser that script fetching is fine and to go ahead with parsing. But the script will only execute once everything has been parsed!
+
 
 # Nodemon
 
