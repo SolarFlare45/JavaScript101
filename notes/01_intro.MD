@@ -40,7 +40,7 @@ Note that when scripts are imported in HTML, they are imported in the order they
 
 # Location of script tags
 
-Script tags can really be placed in the body or the head section. 
+Script tags can really be placed in the body or the head section. For inline or in page scripts, Async and defer cannot be used practically and if a src is used, the src file will be what is prioritized. 
 
 However, this creates a problem. The browser will wait until all the scripts have been loaded until the next html is parsed. 
 
@@ -48,7 +48,9 @@ In the past this was solved by putting the script tags at the bottom of the body
 
 ## async
 
-Use when the script has no external dependencies (CDNs etc.).
+Use when the script has no external dependencies (CDNs etc.) and if the script does not have to interact with the webpage as the code is executed as early as possible. 
+
+It should be noted that the order of the scripts executed is not guranteed. Which is why external dependencies are not such a good idea. 
 
 This tells the browser that script fetching is fine while the page loads but to wait until execution is over before resuming the parsing. This is only available for externally loaded files.
 
