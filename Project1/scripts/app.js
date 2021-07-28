@@ -39,7 +39,12 @@ function calculateResult(calculationType) {
     }
   }
 
-  if(!found)
+  //check 
+  if (!found || !calculationType) {
+    alert(`INTERNAL ERROR: ${calculationType} is not a valid operation`);
+    return;
+  }
+
 
 
   const opValue = getUserNumberInput();

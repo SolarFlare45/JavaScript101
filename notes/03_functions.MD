@@ -34,6 +34,8 @@ This will not generate an error and will output "Manu". Note that the function p
 
 Nothing after the return statement will be returned. There are some instances of "return-less" functions but they are mainly for HTTP requests. 
 
+Something to watch out for: try not to place these in other functions as this will only return out of that specific function!
+
 ## Event Listeners
 
 Functions can be added as event listeners. However parantheses should be avoided because that will immediately call the function!

@@ -19,3 +19,21 @@ However if one of the first conditions is met, the seperate if may also execute!
 Two objects and arrays that are identical will not pass the conditional check with == OR ===. HOWEVER, directly comparing the identical elements inside will pass the conditional. 
 
 Unless of course the identical elements inside are also objects/arrays. 
+
+
+## Order of Operations
+
+Left to right always. Follow math rules. Left to right with comparison operators as well. 
+
+## Falsy and Truthy
+
+This refers to JavaScript coerce values to Boolean if used in comparison operators. 
+
+These values will always be falsy:
+- 0
+- ""
+- null/undefined/NaN
+
+ANY other value will always be truthy. 
+
+So these will implcitly be converted to their boolean values if they are used in comparison to anything. Please realize that this does NOT actually convert values. 
